@@ -184,7 +184,7 @@ namespace Syslib.Core.Application
 			var removechars = new CStr(" 0123456789");
 			str.Str("123 Text 123");
 
-			Console.WriteLine($"Remove Leadcharacters \"{removechars}\" from \"{str}\" -> \"{str.FilterRemoveLead(removechars)}\"");
+			Console.WriteLine($"Remove Leadcharacters \"{removechars}\" from \"{str}\" -> \"{str.FilterRemoveBegin(removechars)}\"");
 
 		}
 
@@ -193,7 +193,7 @@ namespace Syslib.Core.Application
 			var removechars = new CStr(" 0123456789");
 			str.Str("123 Text 123");
 
-			Console.WriteLine($"Remove Trailcharacters \"{removechars}\" from \"{str}\" -> \"{str.FilterRemoveTrail(removechars)}\"");
+			Console.WriteLine($"Remove Trailcharacters \"{removechars}\" from \"{str}\" -> \"{str.FilterRemoveEnd(removechars)}\"");
 
 		}
 
