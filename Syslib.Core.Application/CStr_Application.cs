@@ -35,8 +35,11 @@ namespace Syslib.Core.Application
 			this.ToInteger();           // convert string to int32
 			this.ToDouble();            // convert string to double
 
-			this.FillString();			// fill string with characters
-
+			this.FillString();          // fill string with characters
+			this.PadString();           // pad string left or right
+			this.Insert();              // insert text
+			this.CompareStrings();      // compare strings
+			this.fields();				// field handling
 
 		}
 
@@ -210,50 +213,97 @@ namespace Syslib.Core.Application
 
 		void ToInteger()
 		{
+			str.Str("123");
+			Console.WriteLine($"ToInteger \"{str}\" -> {str.ToInt32()}");
+
 			str.Str("123.123");
-			var result1 = str.ToInt32();
-			Console.WriteLine($"ToInteger \"{str}\" -> {result1}");
+			Console.WriteLine($"ToInteger \"{str}\" -> {str.ToInt32()}");
 
 			str.Str("123,123");
-			var result2 = str.ToInt32();
-			Console.WriteLine($"ToInteger \"{str}\" -> {result2}");
+			Console.WriteLine($"ToInteger \"{str}\" -> {str.ToInt32()}");
 
 			str.Str("123.123,123");
-			var result3 = str.ToInt32();
-			Console.WriteLine($"ToInteger \"{str}\" -> {result3}");
+			Console.WriteLine($"ToInteger \"{str}\" -> {str.ToInt32()}");
 
 			str.Str("123,123.123");
-			var result4 = str.ToInt32();
-			Console.WriteLine($"ToInteger \"{str}\" -> {result4}");
+			Console.WriteLine($"ToInteger \"{str}\" -> {str.ToInt32()}");
 
 		}
 
 		void ToDouble()
 		{
 			str.Str("123.123");
-			var result1 = str.ToDouble();
-			Console.WriteLine($"ToDouble \"{str}\" -> {result1}");
+			Console.WriteLine($"ToDouble \"{str}\" -> {str.ToDouble()}");
 
 			str.Str("123,123");
-			var result2 = str.ToDouble();
-			Console.WriteLine($"ToDouble \"{str}\" -> {result2}");
+			Console.WriteLine($"ToDouble \"{str}\" -> {str.ToDouble()}");
 
 
 			str.Str("123.123,123");
-			var result3 = str.ToDouble();
-			Console.WriteLine($"ToDouble \"{str}\" -> {result3}");
+			Console.WriteLine($"ToDouble \"{str}\" -> {str.ToDouble()}");
 
 			str.Str("123,123.123");
-			var result4 = str.ToDouble();
-			Console.WriteLine($"ToDouble \"{str}\" -> {result4}");
+			Console.WriteLine($"ToDouble \"{str}\" -> {str.ToDouble()}");
 
 		}
 
 		void FillString()
 		{
 			str.Fill(50,'x');
+			Console.WriteLine($"Fill String = \"{str}\"  Length = {str.Length()}  String Size = {str.Size()}");
+		}
 
-			Console.WriteLine($"Fill String =     \"{str}\"  Length = {str.Length()}  String Size = {str.Size()}");
+
+		void PadString()
+		{
+			str.Str("Hello!").PadLeft(totallength: 20, padcharacter: '-');
+			Console.WriteLine($"PadLeft =     \"{str}\"");
+
+			str.Str("Hello!").PadRight(totallength: 20, padcharacter: '-');
+			Console.WriteLine($"PadRight =    \"{str}\"");
+
+		}
+
+
+		void Insert()
+		{
+			str.Str("some text");
+			str.Insert(" INSERT MID ", str.Length() / 2);
+			str.Insert(" INSERT END ", str.Length());
+			str.Insert(" INSERT BEGINNING  ", str.Length());
+
+			Console.WriteLine($"Insert =      \"{str}\"");
+
+		}
+
+		void CompareStrings() 
+		{
+			str.Str("Aaaa");
+			var str1 = new CStr("Bbbb");
+			var str2 = new CStr("Cccc");
+
+			Console.WriteLine($"Compare  \"{str1}\" with \"{str1}\" =  {str1.Compare(str1)}");
+			Console.WriteLine($"Compare  \"{str1}\" with \"{str}\" =  {str1.Compare(str)}");
+			Console.WriteLine($"Compare  \"{str1}\" with \"{str2}\" =  {str1.Compare(str2)}");
+
+			Console.WriteLine($"IsEqual  \"{str1}\" and \"{str2}\" =  {str1.IsEqual(str2)}");
+			Console.WriteLine($"IsEqual  \"{str1}\" and \"{str1}\" =  {str1.IsEqual(str1)}");
+
+		}
+
+
+		void fields()
+		{
+			str.Str("one,\"two,three\",four");
+
+			Console.WriteLine($"FieldCount  string \"{str}\" contains {str.FieldCount(',', usequote: false)} fields");
+			Console.WriteLine($"FieldCount  string \"{str}\" contains {str.FieldCount(',', usequote: true)} fields");
+
+			Console.WriteLine($"First Field in string \"{str}\" is {str.GetField(fieldnumber: 0, fieldseparator: ',', usequote: true)}");
+
+			Console.WriteLine($"Field 1 in string \"{str}\" is {str.GetField(fieldnumber: 1, fieldseparator: ',', usequote: false)}");
+			Console.WriteLine($"Field 1 in string \"{str}\" is {str.GetField(fieldnumber: 1, fieldseparator: ',', usequote: true)}");
+
 
 		}
 
