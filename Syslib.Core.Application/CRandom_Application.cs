@@ -76,6 +76,10 @@ namespace Syslib.Core.Application
 		{
 			int arraysize = 10;
 			int[] intarray = new int[arraysize];
+			string[] arrayofstrings = { "Hello", "World", "One", "Two", "Three", "Four" };
+
+
+			// shuffle array of integers
 
 			for (int i = 0; i < arraysize; i++) intarray[i] = i;
 
@@ -89,16 +93,29 @@ namespace Syslib.Core.Application
 			Console.Write("\n");
 
 
+
+			// Shuffle array of strings
+
+			Console.Write("Random Shuffle: Array of strings: ");
+			for (int i = 0; i < arrayofstrings.Length; i++) Console.Write($"{arrayofstrings[i]} ");
+
+			CRandom.Random.Shuffle(arrayofstrings);
+
+			Console.Write("   Shuffled: ");
+			for (int i = 0; i < arrayofstrings.Length; i++) Console.Write($"{arrayofstrings[i]} ");
+			Console.Write("\n");
+
+
 		}
 
 		void SelectRandomFromList()
 		{
 			var list = new CList<string>();
-			string[] listofstrings = { "Hello", "World", "One", "Two", "Three", "Four"};
+			string[] arrayofstrings = { "Hello", "World", "One", "Two", "Three", "Four"};
 
-			list.Add(listofstrings);
+			list.Add(arrayofstrings);
 
-			Console.Write("List of strings: ");
+			Console.Write("Random Select from List of strings: ");
 			foreach (var str in list) { Console.Write($"{str} "); }
 
 			Console.WriteLine($" Random selected: {CRandom.Random.SelectRandom(list, itemsInList: list.Count())}");
