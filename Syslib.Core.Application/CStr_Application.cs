@@ -257,7 +257,7 @@ namespace Syslib.Core.Application
 			str.Str("some text");
 			str.Insert(" INSERT MID ", str.Length() / 2);
 			str.Insert(" INSERT END ", str.Length());
-			str.Insert(" INSERT BEGINNING  ", str.Length());
+			str.Insert(" INSERT BEGINNING  ", 0);
 
 			Console.WriteLine($"Insert =      \"{str}\"");
 
