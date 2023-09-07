@@ -128,15 +128,9 @@ namespace Syslib.Core.Application
 			var teststr1 = new CStr("Hello");
 			var teststr2 = new CStr("hello");
 
-			if (str.BeginWith(teststr1))
-				Console.WriteLine($"Begin With {teststr1} String = \"{str}\"  True");
-			else
-				Console.WriteLine($"Begin With {teststr1} String = \"{str}\"  False");
+			Console.WriteLine($"Begin With {teststr1} String = \"{str}\"  {str.BeginWith(teststr1)}");
+			Console.WriteLine($"Begin With {teststr2} String = \"{str}\"  {str.BeginWith(teststr2)}");
 
-			if (str.BeginWith(teststr2))
-				Console.WriteLine($"Begin With {teststr2} String = \"{str}\"  True");
-			else
-				Console.WriteLine($"Begin With {teststr2} String = \"{str}\"  False");
 		}
 
 
@@ -145,15 +139,8 @@ namespace Syslib.Core.Application
 			var teststr1 = new CStr("World!");
 			var teststr2 = new CStr("world!");
 
-			if (str.EndWith(teststr1))
-				Console.WriteLine($"End With {teststr1} String = \"{str}\"  True");
-			else
-				Console.WriteLine($"End With {teststr1} String = \"{str}\"  False");
-
-			if (str.EndWith(teststr2))
-				Console.WriteLine($"End With {teststr2} String = \"{str}\"  True");
-			else
-				Console.WriteLine($"End With {teststr2} String = \"{str}\"  False");
+			Console.WriteLine($"End With {teststr1} String = \"{str}\"  {str.EndWith(teststr1)}");
+			Console.WriteLine($"End With {teststr2} String = \"{str}\"  {str.EndWith(teststr2)}");
 		}
 
 		void ContainsChar()
