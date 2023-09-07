@@ -8,3 +8,7 @@ new CStr_Application().Run();
 
 // CRandom Examples
 new CRandom_Application().Run();
+
+// CList Examples
+new CList_Application().Run();
+
