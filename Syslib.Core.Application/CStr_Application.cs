@@ -39,7 +39,7 @@ namespace Syslib.Core.Application
 			this.PadString();           // pad string left or right
 			this.Insert();              // insert text
 			this.CompareStrings();      // compare strings
-			this.fields();				// field handling
+			this.Fields();				// field handling
 
 		}
 
@@ -279,7 +279,7 @@ namespace Syslib.Core.Application
 		}
 
 
-		void fields()
+		void Fields()
 		{
 			str.Str("one,\"two,three\",four");
 
