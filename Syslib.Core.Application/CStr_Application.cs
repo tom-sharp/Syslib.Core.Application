@@ -203,33 +203,33 @@ namespace Syslib.Core.Application
 			str.Str("123");
 			Console.WriteLine($"ToInteger \"{str}\" -> {str.ToInt32()}");
 
-			str.Str("123.123");
+			str.Str("123.456");
 			Console.WriteLine($"ToInteger \"{str}\" -> {str.ToInt32()}");
 
-			str.Str("123,123");
+			str.Str("123,456");
 			Console.WriteLine($"ToInteger \"{str}\" -> {str.ToInt32()}");
 
-			str.Str("123.123,123");
+			str.Str("123.456,789");
 			Console.WriteLine($"ToInteger \"{str}\" -> {str.ToInt32()}");
 
-			str.Str("123,123.123");
+			str.Str("123,456.789");
 			Console.WriteLine($"ToInteger \"{str}\" -> {str.ToInt32()}");
 
 		}
 
 		void ToDouble()
 		{
-			str.Str("123.123");
+			str.Str("123.456");
 			Console.WriteLine($"ToDouble \"{str}\" -> {str.ToDouble()}");
 
-			str.Str("123,123");
+			str.Str("123,456");
 			Console.WriteLine($"ToDouble \"{str}\" -> {str.ToDouble()}");
 
 
-			str.Str("123.123,123");
+			str.Str("123.456,789");
 			Console.WriteLine($"ToDouble \"{str}\" -> {str.ToDouble()}");
 
-			str.Str("123,123.123");
+			str.Str("123,456.789");
 			Console.WriteLine($"ToDouble \"{str}\" -> {str.ToDouble()}");
 
 		}
