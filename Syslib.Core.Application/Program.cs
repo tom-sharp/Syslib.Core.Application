@@ -21,3 +21,6 @@ new CHash_Application().Run();
 // CQue Examples
 new CQue_Application().Run();
 
+
+// CBugCheck Examples
+new BugCheck_Application().Run();
