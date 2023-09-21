@@ -3,12 +3,6 @@ namespace Syslib.Core.Application
 {
 
 
-	class Person 
-	{
-        public int Id { get; set; }
-		public string? Name { get; set; }
-
-    }
 
 
 	internal class CList_Application
@@ -18,6 +12,7 @@ namespace Syslib.Core.Application
 
 		public void Run()
 		{
+			Console.WriteLine("EXAMPLES: CList ----------------------------------------");
 			this.IsEmpyList();					// check if list is empty
 			this.AddItemsToList();				// add items to list
 			this.IsEmpyList();					// check if list is empty

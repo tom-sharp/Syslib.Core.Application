@@ -16,6 +16,7 @@ namespace Syslib.Core.Application
 
 		public void Run()
 		{
+			Console.WriteLine("EXAMPLES: CHash ----------------------------------------");
 			this.MD5Example();
 			this.SHA1Example();
 			this.SHA256Example();

@@ -8,6 +8,7 @@ namespace Syslib.Core.Application
 		
 		public void Run() 
 		{
+			Console.WriteLine("EXAMPLES: CStr ----------------------------------------");
 			this.Init();                // default init
 			this.InitWithSize();        // init with string buffer size
 			this.InitWithFill();		// init with fillstring

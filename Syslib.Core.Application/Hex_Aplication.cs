@@ -8,6 +8,7 @@ namespace Syslib.Core.Application
 
 		public void Run()
 		{
+			Console.WriteLine("EXAMPLES: CHex ----------------------------------------");
 			this.ConvertAnIntegerToAHexString();			// convert an integer value to a hex string representation
 			this.ConvertAByteArrayBufferToAHexString();		// convert a byte array buffer to it's  hex string representation
 			this.ConvertAHexStringToAByteArrayBuffer();		// convert an hex string into a byte array

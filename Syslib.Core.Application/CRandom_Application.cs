@@ -6,6 +6,7 @@ namespace Syslib.Core.Application
 
 		public void Run()
 		{
+			Console.WriteLine("EXAMPLES: CRandom ----------------------------------------");
 			this.CustomSeedInit();			// Use of Custom Randomization init with a custom value (not needed)
 			this.RandomNumber();			// generate random positive integer numbers 0 - 99 999 999
 			this.RandomByte();				// generate a random byte value between 0 - 99

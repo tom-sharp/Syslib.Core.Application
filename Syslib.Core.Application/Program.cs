@@ -17,3 +17,7 @@ new Hex_Aplication().Run();
 // CHash Examples
 new CHash_Application().Run();
 
+
+// CQue Examples
+new CQue_Application().Run();
+
