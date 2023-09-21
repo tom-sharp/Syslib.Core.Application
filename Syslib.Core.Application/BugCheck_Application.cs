@@ -57,7 +57,7 @@ namespace Syslib.Core.Application
 		void LogToMemory()
 		{
 			int i;
-			for (i = 0; i < 10; i++)  BugCheck.MemLogger(this, "Log message sent from bugcheck example");
+			for (i = 0; i < 10; i++)  BugCheck.MemLogger(this, $"Log message {i} sent from bugcheck example");
 			Console.WriteLine($"Bugcheck silently logged {i} messages to memory");
 		}
 

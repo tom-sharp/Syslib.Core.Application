@@ -216,6 +216,20 @@ namespace Syslib.Core.Application
 			str.Str("123,456.789");
 			Console.WriteLine($"ToInteger \"{str}\" -> {str.ToInt32()}");
 
+			str.Str("123k");
+			Console.WriteLine($"ToInteger \"{str}\" -> {str.ToInt32()}");
+
+			str.Str("123m");
+			Console.WriteLine($"ToInteger \"{str}\" -> {str.ToInt32()}");
+
+			str.Str("12.3k");
+			Console.WriteLine($"ToInteger \"{str}\" -> {str.ToInt32()}");
+
+			str.Str("12.3m");
+			Console.WriteLine($"ToInteger \"{str}\" -> {str.ToInt32()}");
+
+			str.Str("123q");
+			Console.WriteLine($"ToInteger \"{str}\" -> {str.ToInt32()}");
 		}
 
 		void ToDouble()
@@ -231,6 +245,21 @@ namespace Syslib.Core.Application
 			Console.WriteLine($"ToDouble \"{str}\" -> {str.ToDouble()}");
 
 			str.Str("123,456.789");
+			Console.WriteLine($"ToDouble \"{str}\" -> {str.ToDouble()}");
+
+			str.Str("123k");
+			Console.WriteLine($"ToDouble \"{str}\" -> {str.ToDouble()}");
+
+			str.Str("123m");
+			Console.WriteLine($"ToDouble \"{str}\" -> {str.ToDouble()}");
+
+			str.Str("12.3k");
+			Console.WriteLine($"ToDouble \"{str}\" -> {str.ToDouble()}");
+
+			str.Str("12.3m");
+			Console.WriteLine($"ToDouble \"{str}\" -> {str.ToDouble()}");
+
+			str.Str("123q");
 			Console.WriteLine($"ToDouble \"{str}\" -> {str.ToDouble()}");
 
 		}
