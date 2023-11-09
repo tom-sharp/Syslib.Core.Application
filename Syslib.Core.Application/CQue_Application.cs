@@ -18,24 +18,24 @@ namespace Syslib.Core.Application
 
 		void QueClearExample() 
 		{
-			var que = new CStack<Person>();
+			var que = new CQue<Person>();
 
-			Console.WriteLine($"Que contain {que.Length} items and is empty ? {que.IsEmpty} ");
+			Console.WriteLine($"Que contain {que.Count()} items and is empty ? {que.IsEmpty} ");
 
 			que.Que(new Person() { Id = 1, Name = "Jane", Age = 30});
 
-			Console.WriteLine($"Que contain {que.Length} items and is empty ? {que.IsEmpty} ");
+			Console.WriteLine($"Que contain {que.Count()} items and is empty ? {que.IsEmpty} ");
 
 			que.Clear();
 
-			Console.WriteLine($"Que contain {que.Length} items and is empty ? {que.IsEmpty} ");
+			Console.WriteLine($"Que contain {que.Count()} items and is empty ? {que.IsEmpty} ");
 
 		}
 
 
 		void QueItemsExample()
 		{
-			var que = new CStack<Person>();
+			var que = new CQue<Person>();
 			var names = new RandomNames();
 
 			Console.Write($"Que persons: ");
@@ -46,11 +46,11 @@ namespace Syslib.Core.Application
 				Console.Write($"{person.Name} ({person.Age}), ");
 			}
 
-			Console.Write($"\nQue {que.Length} Order: ");
+			Console.Write($"\nQue {que.Count()} Order: ");
 
-			while (!que.IsEmpty)
+			while (!que.IsEmpty())
 			{
-				var person = que.Pop();
+				var person = que.Next();
 				Console.Write($"{person.Name} ({person.Age}), ");
 			}
 			Console.Write("\n");
@@ -60,7 +60,7 @@ namespace Syslib.Core.Application
 
 		void PushItemsExample()
 		{
-			var que = new CStack<Person>();
+			var que = new CQue<Person>();
 			var names = new RandomNames();
 
 			Console.Write($"Push persons: ");
@@ -71,11 +71,11 @@ namespace Syslib.Core.Application
 				Console.Write($"{person.Name} ({person.Age}), ");
 			}
 
-			Console.Write($"\nPush {que.Length} Order: ");
+			Console.Write($"\nPush {que.Count()} Order: ");
 
-			while (!que.IsEmpty)
+			while (!que.IsEmpty())
 			{
-				var person = que.Pop();
+				var person = que.Next();
 				Console.Write($"{person.Name} ({person.Age}), ");
 			}
 			Console.Write("\n");
@@ -85,7 +85,7 @@ namespace Syslib.Core.Application
 
 		void MixedItemsExample()
 		{
-			var que = new CStack<Person>();
+			var que = new CQue<Person>();
 			var names = new RandomNames();
 
 			Console.Write($"Mixed persons: ");
@@ -102,11 +102,11 @@ namespace Syslib.Core.Application
 				Console.Write($"{person.Name} ({person.Age}), ");
 			}
 
-			Console.Write($"\nMixed {que.Length} Order: ");
+			Console.Write($"\nMixed {que.Count()} Order: ");
 
-			while (!que.IsEmpty)
+			while (!que.IsEmpty())
 			{
-				var person = que.Pop();
+				var person = que.Next();
 				Console.Write($"{person.Name} ({person.Age}), ");
 			}
 			Console.Write("\n");
